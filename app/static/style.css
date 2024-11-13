@@ -1,0 +1,40 @@
+/* Основные стили для страницы */
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+/* Стили для формы */
+form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 5px 10px;
+}
+
+/* Стили для списка */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
