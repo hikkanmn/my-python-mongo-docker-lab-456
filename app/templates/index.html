@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Моя записная книжка</h1>
+        <p>Это приложение, созданное при разработке которого использовались Python (flask, pymongo), MongoDB & Docker, а также HTML, CSS & JavaScript
+        </p>
+        <!-- Форма для добавления нового имени -->
+        <form method="POST" action="/">
+            <input type="text" name="name" placeholder="Введите имя" id="name" autocomplete="off">
+            <input type="text" name="surname" placeholder="Введите фамилию" id="surname" autocomplete="off">
+            <input type="text" name="email" placeholder="Введите почту" id="email" autocomplete="off">
+            <button type="submit">добавить данные</button>
+        </form>
+        <h2>Записи в Базе Данных:</h2>
+        <!-- Список записей из базы данных -->
+        <ul>
+            {% for record in records %}
+            <li>{{ record.name }} {{ record.surname }} — {{ record.email }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>

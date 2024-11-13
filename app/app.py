@@ -11,12 +11,19 @@ collection = db.records  # Название коллекции
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # Получение данных из формы и сохранение в MongoDB
+        # Получение данных из формы
         name = request.form.get('name')
-        second_name = request.form.get('second_name')
-        if name & second_name:
-            collection.insert_one({'name': name, 'second_name': second_name})  # Вставка новой записи в коллекцию
-        return redirect('/')  # Перенаправление на главную страницу
+        surname = request.form.get('surname')
+        email = request.form.get('email')
+
+        if name and surname and email:
+            # Вставка новой записи в коллекцию
+            collection.insert_one({
+                'name': name,
+                'surname': surname,
+                'email': email
+            })
+        return redirect('/')
 
     # Получение всех записей из коллекции
     records = collection.find()
