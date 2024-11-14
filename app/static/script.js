@@ -50,16 +50,16 @@ function checkInputs() {
 
 /*чтение клика по форме, применение проверок и отправка*/
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
   checkInputs();
   if (
     !email.classList.contains("errorInput") &&
     !contact_name.classList.contains("errorInput") &&
     !contact_surname.classList.contains("errorInput")
   ) {
-    alert('Данные введены корректно! База данных пополнена')
+    
   }
   else {
+    e.preventDefault();
     alert('Данные введены некорректно! Попробуйте снова')
   }
 });
